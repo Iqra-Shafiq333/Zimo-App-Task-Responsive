@@ -11,7 +11,6 @@ import VideoTwoo from '../assets/2nd video.mp4';
 import PicThreee from '../assets/3rd.jpg';
 import PicFourr from '../assets/4rth.jpg';
 import PicFivee from '../assets/5th.jpg';
-
 const Header = () => {
   return (
     <header className="relative w-full py-4 px-6 flex justify-center items-center">
@@ -29,7 +28,7 @@ const Header = () => {
       <img 
         src={Minizimo} 
         alt="Minizimo Logo" 
-        className="absolute top-90 sm:top-90 md:top-60 lg:top-62 left-12 w-35 md:w-32 lg:w-45 transition-all duration-1000 ease-out delay-300"
+        className="absolute top-90 sm:top-90 md:top-60 lg:top-62 left-8 w-35 md:w-32 lg:w-45 transition-all duration-1000 ease-out delay-300"
         style={{ 
           animation: 'slideInFromLeft 1s ease-out forwards',
           opacity: 0,
@@ -82,12 +81,12 @@ const DateTime = () => {
 
   return (
     <div className="absolute max-w-xs mx-auto my-0 px-2 py-1 top-3 right-4 -sm:right-0 md:right-5">
-      <img src={Ukzone} alt="UK Time Zone" className="absolute top-3 right-0 w-6 h-6 md:w-7 md:h-7 right-2 lg:right-0 "/>
-      <div className="flex flex-col pl-5 pr-6"> 
-        <span className="text-gray-800 font-semibold pl-1 text-[11px] md:text-base">
-          {timeStr} LONDON United Kingdom
+      <img src={Ukzone} alt="UK Time Zone" className="absolute top-2 lg:top-2 right-0 w-6 h-6 md:w-7 md:h-7 right-2 lg:right-0 "/>
+      <div className="flex flex-col pl-5 pr-8 lato-font"> 
+        <span className="myfont text-gray-700 pl-10 text-[12px] ">
+          {timeStr}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LONDON&nbsp;&nbsp;&nbsp;&nbsp;UNITED&nbsp;&nbsp;KINGDOM
         </span>
-        <span className="text-yellow-400 text-[8px] pl-10 lg:text-sm md:text-sm">
+        <span className="myfont text-yellow-600 text-[12px] pl-21 ">
           {dateStr}
         </span>
       </div>
@@ -95,6 +94,7 @@ const DateTime = () => {
   );
 };
 
+// ... rest of your code remains the same
 const DesktopVideoBig= () => {
   return (
     <div className="hidden md:flex justify-center mt-15 left-115 max-w-xs relative">
