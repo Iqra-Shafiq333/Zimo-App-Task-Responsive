@@ -30,11 +30,11 @@ const EightPage = () => {
     id="eight-page"
     className="relative w-full h-screen flex items-center justify-center bg-gray-100 overflow-hidden">
     <img src={Eight1} alt="background" className="absolute top-90 sm:top-42 md:top-76 lg:top-60 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 sm:w-30 md:w-44 lg:w-50 object-contain"/>
-    <img src={Eight2} alt="background" className="absolute top-180 sm:top-72 md:top-86 lg:top-120 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 sm:w-40 md:w-54 lg:w-100 object-contain"/>
-    <img src={Eight3} alt="background" className="absolute top-190 sm:top-72 md:top-86 lg:top-120 right-35 bottom-10  w-8 sm:w-7 md:w-6 lg:w-8 "/>
-    <img src={Eight4} alt="background" className="absolute top-190 sm:top-72 md:top-86 lg:top-120 right-10 bottom-10  w-20 sm:w-20 md:w-20 lg:w-20 "/>
-    <img src={Eight5} alt="background" className="absolute top-202 sm:top-80 md:top-96 lg:top-132 right-10 bottom-10  w-35 sm:w-30 md:w-30 lg:w-35 "/>
-    <img src={Eight6} alt="background" className="absolute top-204 sm:top-80 md:top-96 lg:top-135 right-6 bottom-10  w-20 sm:w-20 md:w-20 lg:w-20 "/>
+    <img src={Eight2} alt="background" className="absolute top-170 sm:top-72 md:top-86 lg:top-120 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 sm:w-40 md:w-54 lg:w-100 object-contain"/>
+    <img src={Eight3} alt="background" className="absolute top-180 sm:top-72 md:top-86 lg:top-120 right-30 bottom-10  w-5 sm:w-7 md:w-6 lg:w-8 "/>
+    <img src={Eight4} alt="background" className="absolute top-180 sm:top-72 md:top-86 lg:top-120 right-6 bottom-10  w-20 sm:w-20 md:w-20 lg:w-20 "/>
+    <img src={Eight5} alt="background" className="absolute top-187 sm:top-80 md:top-96 lg:top-132 right-3 bottom-10  w-35 sm:w-30 md:w-30 lg:w-35 "/>
+    <img src={Eight6} alt="background" className="absolute top-188 sm:top-80 md:top-96 lg:top-135 right-6 bottom-10  w-20 sm:w-20 md:w-20 lg:w-20 "/>
     <Footer />
       </div>
     

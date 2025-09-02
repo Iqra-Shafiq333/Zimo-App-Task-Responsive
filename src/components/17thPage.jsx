@@ -50,7 +50,7 @@ const SeventeenthPage = () => {
       </div>
 
        <img src={Seventeen32} alt="CONTACT" className="absolute w-25 sm:w-25 md:w-30 lg:w-30 top-30 sm:top-30 md:top-30 lg:top-20 left-10 z-10" />
-       <img src={Seventeen33} alt="CONTACT" className="absolute w-40 sm:w-35 md:w-40 lg:w-50 top-190 sm:top-180 md:top-120 lg:top-120 left-10 z-10" />
+       <img src={Seventeen33} alt="CONTACT" className="absolute w-40 sm:w-35 md:w-40 lg:w-50 top-175 sm:top-180 md:top-120 lg:top-120 left-10 z-10" />
        <img src={Seventeen34} alt="CONTACT" className="absolute w-55 sm:w-50 md:w-60 lg:w-70 top-150 sm:top-140 md:top-85 lg:top-95 left-10 sm:left-10 md:left-10 lg:left-20 z-10" />
         <img src={Seventeen35} alt="CONTACT" className="absolute w-45 sm:w-40 md:w-50 lg:w-60 top-90 sm:top-85 md:top-50 lg:top-60 left-10 z-10" />
          <img src={Seventeen36} alt="CONTACT" className="absolute w-40 sm:w-35 md:w-45 lg:w-45 top-100 sm:top-95 md:top-40 lg:top-70 left-10 z-10" />

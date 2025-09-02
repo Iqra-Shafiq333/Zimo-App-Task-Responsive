@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Bg1 from '../assets/10 img1.jpg';
 import Thirteen2 from '../assets/13-2.svg'
@@ -23,6 +23,47 @@ import App17 from '../assets/PHONE NUMBER.svg';
 import App18 from '../assets/a18.svg';
 import App19 from '../assets/ZAR CODE (OPTIONAL).svg';
 import App20 from '../assets/continue.svg' 
+import Ukzone from '../assets/ukzone.jpg';
+
+const DateTime = () => {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date());
+    }, 60000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const timeStr = time.toLocaleTimeString('en-GB', { 
+    hour: '2-digit', 
+    minute: '2-digit',
+    hour12: false,
+    timeZone: 'Europe/London'
+  });
+  
+  const dateStr = time.toLocaleDateString('en-GB', { 
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'Europe/London'
+  }).toUpperCase();
+
+  return (
+      <div className="absolute max-w-xs mx-auto my-0 px-2 py-1 top-3 right-4 -sm:right-0 md:right-5">
+        <img src={Ukzone} alt="UK Time Zone" className="absolute top-2 lg:top-2 w-6 h-6 md:w-7 md:h-7 right-2 lg:right-0 "/>
+        <div className="flex flex-col pl-5 pr-8 lato-font"> 
+          <span className="myfont text-gray-700 pl-20 text-[10px] ">
+            {timeStr}&nbsp;LONDON&nbsp;&nbsp;&nbsp;UNITED&nbsp;KINGDOM
+          </span>
+          <span className="myfont text-yellow-600 text-[12px] pl-21 ">
+            {dateStr}
+          </span>
+        </div>
+      </div>
+    );
+  };
 
 const FourteenthPage = () => {
   const navigate = useNavigate();
@@ -383,8 +424,8 @@ const FourteenthPage = () => {
         <img src={App20} alt="continue" className="w-15 sm:w-15 md:w-20 lg:w-20 hover:opacity-90 transition-opacity" />
       </div>
       
-      <img src={Thirteen2} alt="center" className="absolute top-180 sm:top-110 md:top-110 lg:top-110 left-25 w-30 sm:w-26 md:w-26 lg:w-35 -translate-x-1/2 -translate-y-1/2"/>
-      <img src={Thirteen1} alt="center" className="absolute top-180 sm:top-110 md:top-120 lg:top-110 right-3 w-10 sm:w-10 md:w-10 lg:w-15 -translate-x-1/2 -translate-y-1/2"/>
+      <img src={Thirteen2} alt="center" className="absolute top-160 sm:top-110 md:top-110 lg:top-110 left-25 w-30 sm:w-26 md:w-26 lg:w-35 -translate-x-1/2 -translate-y-1/2"/>
+      <img src={Thirteen1} alt="center" className="absolute top-160 sm:top-110 md:top-120 lg:top-110 right-3 w-10 sm:w-10 md:w-10 lg:w-15 -translate-x-1/2 -translate-y-1/2"/>
       
       <div className="absolute top-10 sm:top-10 md:top-10 lg:top-10 left-15 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
         <img src={Thirteen3} alt="center" className="w-15 sm:w-15 md:w-15 lg:w-15"/>
@@ -392,7 +433,9 @@ const FourteenthPage = () => {
           &lt;-- Back
         </div>
       </div>
+      <DateTime />
     </div>
+    
   )
 }
 

@@ -36,7 +36,7 @@ const SixthPage = () => {
       <img src={Background2} alt="side1" className="absolute top-10 left-6 w-40 sm:w-30 md:w-44 lg:w-68"/>
       <img src={Background3} alt="side2" className="absolute top-48 sm:top-32 md:top-36 lg:top-40 left-6 w-50 sm:w-30 md:w-44 lg:w-50"/>
       <img src={Background4} alt="side3" className="absolute top-140 sm:top-76 md:top-64 lg:top-92 left-6 w-50 sm:w-20 md:w-24 lg:w-55" />
-      <img src={Background5} alt="side4" className="absolute top-180 sm:top-160 md:top-74 lg:top-120 left-6 w-50 sm:w-40 md:w-54 lg:w-58"/>
+      <img src={Background5} alt="side4" className="absolute top-170 sm:top-160 md:top-74 lg:top-120 left-6 w-50 sm:w-40 md:w-54 lg:w-58"/>
       <img src={Background6} alt="side5" className="absolute bottom-10 right-6 w-10 sm:w-14 md:w-15 lg:w-15"/>
       <img src={Background7} alt="center" className="absolute top-1/2 left-1/2 w-44 sm:w-30 md:w-36 lg:w-49 -translate-x-1/2 -translate-y-1/2"/>
       <Footer />

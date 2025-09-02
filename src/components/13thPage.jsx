@@ -47,9 +47,16 @@ const ThirteenthPage = () => {
     setSelectedCountry('');
     setIsDropdownOpen(true);
   };
+  
   const handleStartClick = () => {
+    // Add validation - only navigate if country is selected
+    if (!selectedCountry) {
+      alert('Please select a country first');
+      return;
+    }
     navigate('/fourteenth');
   };
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -68,13 +75,13 @@ const ThirteenthPage = () => {
       id="tenth-page"
       className="relative w-full h-screen flex items-center justify-center overflow-hidden"
     >
-      <img src={Thirteen5} alt="center" className="absolute top-1/2 left-1/2 w-25 sm:w-26 md:w-26 lg:w-30 -translate-x-1/2 -translate-y-1/2 z-10"/>
-      <img src={Thirteen2} alt="center" className="absolute top-180 sm:top-110 md:top-110 lg:top-110 left-25 w-30 sm:w-26 md:w-26 lg:w-35 -translate-x-1/2 -translate-y-1/2"/>
-      <img src={Thirteen3} alt="center" className="absolute top-10 sm:top-10 md:top-10 lg:top-10 left-15 w-15 sm:w-15 md:w-15 lg:w-15 -translate-x-1/2 -translate-y-1/2"/>
-      <img src={Thirteen4} alt="center" className="absolute top-80 sm:top-60 md-top-70 lg:top-20 w-80 sm:w-80 md:w-80 lg:w-120 "/>
-      <img src={Thirteen1} alt="center" className="absolute top-180 sm:top-110 md:top-120 lg:top-110 right-3 w-10 sm:w-10 md:w-10 lg:w-15 -translate-x-1/2 -translate-y-1/2"/>
-      <img src={Box} alt="center" className="absolute top-123 sm:top-100 md-top-90 lg:top-85 w-60 sm:w-60 md:w-70 lg:w-80 "/>
-      <img src={Thirteen6} alt="center" className="absolute top-90 sm:top-90 md:top-40 lg:top-40 w-40 sm:w-40 md:w-40 lg:w-45 -translate-x-1 -translate-y-1/2"/>
+      <img src={Thirteen5} alt="center" className="absolute top-1/2 left-1/2 w-25 sm:w-26 md:w-26 lg:w-30 -translate-x-1/2 -translate-y-1/2 z-10 "/>
+      <img src={Thirteen2} alt="center" className="absolute top-170 sm:top-110 md:top-110 lg:top-110 left-20 w-30 sm:w-26 md:w-26 lg:w-35 -translate-x-1/2 -translate-y-1/2 "/>
+      <img src={Thirteen3} alt="center" className="absolute top-30 sm:top-10 md:top-10 lg:top-10 left-15 w-20 sm:w-15 md:w-15 lg:w-15 -translate-x-1/2 -translate-y-1/2 "/>
+      <img src={Thirteen4} alt="center" className="absolute top-80 sm:top-60 md-top-70 lg:top-20 w-85 sm:w-80 md:w-80 lg:w-120 border-1 border-yellow-600 rounded-md"/>
+      <img src={Thirteen1} alt="center" className="absolute top-170 sm:top-110 md:top-120 lg:top-110 right-3 w-10 sm:w-10 md:w-10 lg:w-15 -translate-x-1/2 -translate-y-1/2"/>
+      <img src={Box} alt="center" className="absolute top-123 sm:top-100 md-top-90 lg:top-85 w-50 sm:w-60 md:w-70 lg:w-80 border-2 border-gray-300 rounded-md"/>
+      <img src={Thirteen6} alt="center" className="absolute top-84 sm:top-90 md:top-40 lg:top-40 w-40 sm:w-40 md:w-40 lg:w-45 -translate-x-1 -translate-y-1/2"/>
       
 
       <div className="absolute top-124 sm:top-100 md-top-90 lg:top-87 z-30" ref={dropdownRef}>
@@ -85,7 +92,7 @@ const ThirteenthPage = () => {
             </div>
           ) : (
             <div 
-              className="w-80 h-9 bottom-2 right-15  bg-white border-2 border-gray-700 rounded-md flex items-center justify-center text-black font-bold text-sm sm:text-base md:text-lg py-2 px-4 shadow-md relative"
+              className="w-60 lg:w-90 h-10 bottom-2 right-10 lg:right-20  bg-white border-2 border-gray-700 rounded-md flex items-center justify-center text-black font-bold text-sm sm:text-base md:text-lg py-2 px-4 shadow-md relative"
               onClick={clearSelection}
             >
               {selectedCountry}
@@ -109,12 +116,17 @@ const ThirteenthPage = () => {
           )}
         </div>
       </div>
+      
+      {/* Start button with conditional styling based on selection */}
       <img 
         src={Thirteen7} 
         alt="center" 
-        className="absolute right-4 sm:right-6 md:right-8 lg:right-80 top-1/2 sm:top-1/2 md:top-1/2 lg:top-1/2 transform -translate-y-1/2 w-20 sm:w-20 md:w-25 lg:w-30 cursor-pointer"
+        className={`absolute right-4 sm:right-6 md:right-8 lg:right-80 top-145 sm:top-1/2 md:top-1/2 lg:top-1/2 left-35 lg:left-205 md-left-120 sm:left-120 transform -translate-y-1/2 w-20 sm:w-20 md:w-25 lg:w-30 cursor-pointer ${
+          !selectedCountry ? 'opacity-90 cursor-not-allowed' : ''
+        }`}
         onClick={handleStartClick}
       />
+      
       <Footer />
     </div>
   )

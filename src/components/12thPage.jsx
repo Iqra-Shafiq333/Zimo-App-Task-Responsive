@@ -36,10 +36,15 @@ const TwelvethPage = () => {
       <div className="absolute top-30 left-1/2 transform -translate-x-1/2  p-2">
         <img src={Twelev2} alt="background" className="w-40 sm:w-60 md:w-74 lg:w-60 object-contain"/>
       </div>
-      <div className="absolute top-100 sm-top-50 md:top-40 lg:top-55 w-80 lg:w-140  left-1/2 transform -translate-x-1/2  p-2">
-        <img src={Twelev3} alt="background" className="sm:w-180 md:w-144 lg:w-150 object-contain"/>
-      </div>
-      <div className="absolute top-170 sm-top-130 md:top-110 lg:top-110 left-1/2 transform -translate-x-1/2  p-2">
+     <div className="absolute top-80 sm:top-50 md:top-40 lg:top-55 w-90  lg:w-140 left-27 lg:left-130 transform -translate-x-25 ">
+  <img 
+    src={Twelev3} 
+    alt="background" 
+    className="w-180 sm:w-180 md:w-144 lg:w-150 h-full " 
+  />
+</div>
+
+      <div className="absolute top-160 sm-top-130 md:top-110 lg:top-110 left-1/2 transform -translate-x-1/2  p-2">
         <img src={Twelev4} alt="background" className="w-200 sm:w-180 md:w-144 lg:w-50 object-contain"/>
       </div>
       <Footer/>

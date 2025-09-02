@@ -27,36 +27,41 @@ const DateTime = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 60000);
+    const timer = setInterval(() => {
+      setTime(new Date());
+    }, 60000);
     return () => clearInterval(timer);
   }, []);
 
   const timeStr = time.toLocaleTimeString('en-GB', { 
     hour: '2-digit', 
     minute: '2-digit',
-    hour12: false
+    hour12: false,
+    timeZone: 'Europe/London'
   });
   
   const dateStr = time.toLocaleDateString('en-GB', { 
     weekday: 'long',
     day: 'numeric',
     month: 'long',
-    year: 'numeric'
+    year: 'numeric',
+    timeZone: 'Europe/London'
   }).toUpperCase();
-return (
-    <div className="absolute max-w-xs mx-auto my-0 px-2 py-1 top-0 right-4 -sm:right-0 md:right-5">
-      <img src={Ukzone} alt="UK Time Zone" className="absolute top-3 right-0 w-5 h-5 md:w-7 md:h-7"/>
-      <div className="flex flex-col pr-6"> 
-        <span className="text-gray-800 font-semibold text-[9px] md:text-base">
-          {timeStr} LONDON United Kingdom
-        </span>
-        <span className="text-gray-600 text-[7px] md:text-sm mt-1">
-          {dateStr}
-        </span>
+
+  return (
+      <div className="absolute max-w-xs mx-auto my-0 px-2 py-1 top-3 right-4 -sm:right-0 md:right-5">
+        <img src={Ukzone} alt="UK Time Zone" className="absolute top-2 lg:top-2 w-6 h-6 md:w-7 md:h-7 right-2 lg:right-0 "/>
+        <div className="flex flex-col pl-5 pr-8 lato-font"> 
+          <span className="myfont text-gray-700 pl-20 text-[10px] ">
+            {timeStr}&nbsp;LONDON&nbsp;&nbsp;&nbsp;UNITED&nbsp;KINGDOM
+          </span>
+          <span className="myfont text-yellow-600 text-[12px] pl-21 ">
+            {dateStr}
+          </span>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 const FifteenthPage = () => {
   const navigate = useNavigate();
@@ -353,7 +358,7 @@ const FifteenthPage = () => {
       </div>
     
       <div 
-        className="absolute top-60 sm:top-60 md:top-52 lg:top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 cursor-pointer"
+        className="absolute top-60 sm:top-60 md:top-52 lg:top-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 cursor-pointer"
         onClick={() => handleFieldClick('qualification')}
       >
         <img 
@@ -394,7 +399,7 @@ const FifteenthPage = () => {
       </div>
 
       <div 
-        className="absolute top-70 sm:top-70 md:top-62 lg:top-65 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer"
+        className="absolute top-70 sm:top-70 md:top-62 lg:top-65 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 cursor-pointer"
         onClick={() => handleFieldClick('graduationYear')}
       >
         <img 
@@ -456,45 +461,51 @@ const FifteenthPage = () => {
         )}
       </div>
       <div 
-        className="absolute top-90 sm:top-90 md:top-92 lg:top-95 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 cursor-pointer"
-        onClick={() => handleFieldClick('currentStatus')}
-      >
-        <img 
-          src={App21} 
-          alt="current status box" 
-          className={`w-60 sm:w-50 md:w-70 lg:w-90 z-10 ${errors.currentStatus ? 'border-2 border-red-300 rounded-lg' : ''} ${activeField === 'currentStatus' ? 'bg-gray-100' : ''}`}
-        />
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-          <input
-            type="text"
-            value={formData.currentStatus}
-            readOnly
-            onFocus={() => handleFocus('currentStatus')}
-            onBlur={() => handleBlur('currentStatus')}
-            className="w-4/5 bg-transparent border-none outline-none text-center text-black placeholder-gray-600 font-medium text-sm sm:text-base md:text-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
-          />
-        </div>
-        {!isTyping.currentStatus && (
-          <img src={App22} alt="current status" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 sm:w-30 md:w-35 lg:w-55 z-15 opacity-40 pointer-events-none" />
-        )}
+  className="absolute top-90 sm:top-90 md:top-92 lg:top-95 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer"
+  onClick={() => handleFieldClick('currentStatus')}
+>
+  <img 
+    src={App21} 
+    alt="current status box" 
+    className={`w-60 sm:w-50 md:w-70 lg:w-90 relative z-0 ${errors.currentStatus ? 'border-2 border-red-300 rounded-lg' : ''} ${activeField === 'currentStatus' ? 'bg-gray-100' : ''}`}
+  />
+  
+  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-40">
+    <input
+      type="text"
+      value={formData.currentStatus}
+      readOnly
+      onFocus={() => handleFocus('currentStatus')}
+      onBlur={() => handleBlur('currentStatus')}
+      className="w-4/5 bg-transparent border-none outline-none text-center text-black placeholder-gray-600 font-medium text-sm sm:text-base md:text-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+    />
+  </div>
 
-        {showStatusDropdown && (
-          <div className="absolute top-full left-0 w-full bg-white border border-gray-300 rounded-lg shadow-lg mt-1 z-40 max-h-40 overflow-y-auto">
-            {statusOptions.map((status) => (
-              <div
-                key={status}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-center"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleSelect('currentStatus', status);
-                }}
-              >
-                {status}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+  {!isTyping.currentStatus && (
+    <img 
+      src={App22} 
+      alt="current status" 
+      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 sm:w-30 md:w-35 lg:w-55 z-5 opacity-50 pointer-events-none" 
+    />
+  )}
+
+  {showStatusDropdown && (
+    <div className="absolute top-full left-0 w-full bg-white border border-gray-300 rounded-lg max-h-40 overflow-y-auto z-40">
+      {statusOptions.map((status) => (
+        <div
+          key={status}
+          className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-center"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleSelect('currentStatus', status);
+          }}
+        >
+          {status}
+        </div>
+      ))}
+    </div>
+  )}
+</div>
 
       <div 
         className="absolute top-100 sm:top-100 md:top-102 lg:top-110 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 cursor-pointer"
@@ -540,8 +551,8 @@ const FifteenthPage = () => {
         <img src={App20} alt="continue" className="w-15 sm:w-15 md:w-20 lg:w-20 hover:opacity-90 transition-opacity" />
       </div>
       
-      <img src={Thirteen2} alt="center" className="absolute top-180 sm:top-110 md:top-110 lg:top-110 left-25 w-30 sm:w-26 md:w-26 lg:w-35 -translate-x-1/2 -translate-y-1/2 z-10"/>
-      <img src={Thirteen1} alt="center" className="absolute top-180 sm:top-110 md:top-120 lg:top-110 right-3 w-10 sm:w-10 md:w-10 lg:w-15 -translate-x-1/2 -translate-y-1/2 z-10"/>
+      <img src={Thirteen2} alt="center" className="absolute top-170 sm:top-110 md:top-110 lg:top-110 left-25 w-30 sm:w-26 md:w-26 lg:w-35 -translate-x-1/2 -translate-y-1/2 z-10"/>
+      <img src={Thirteen1} alt="center" className="absolute top-170 sm:top-110 md:top-120 lg:top-110 right-3 w-10 sm:w-10 md:w-10 lg:w-15 -translate-x-1/2 -translate-y-1/2 z-10"/>
       
 
       <div className="absolute top-10 sm:top-10 md:top-10 lg:top-10 left-15 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10">
