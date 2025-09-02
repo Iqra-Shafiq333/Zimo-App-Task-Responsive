@@ -171,10 +171,10 @@ const Footer = () => {
   return (
     <footer className="w-full py-2 px-6 bg-gray-000 mt-auto">
       <div className="flex flex-col items-center">
-        <img src={FooterLogo} alt="Footer Logo" className="w-58 sm:w-40 md:w-56 lg:w-64 mb-10 sm:mb-10 md:mb-10 lg:mb-8 mx-auto z-10"
+        <img src={FooterLogo} alt="Footer Logo" className="w-58 sm:w-40 md:w-56 lg:w-64 mb-15 sm:mb-10 md:mb-10 lg:mb-8 mx-auto z-10"
         />
         <div 
-          className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 mb-15 sm:mb-10 md:mb-10 lg:mb-7 border-b-2 border-r-2 border-gray-800 transform rotate-45 cursor-pointer mx-auto"
+          className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 mb-7 sm:mb-10 md:mb-10 lg:mb-7 border-b-2 border-r-2 border-gray-800 transform rotate-45 cursor-pointer mx-auto"
           onClick={handleScrollToNext}
         ></div>
       </div>

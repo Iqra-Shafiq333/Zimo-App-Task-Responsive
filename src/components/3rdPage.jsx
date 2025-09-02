@@ -96,14 +96,16 @@ const Footer = () => {
 
 const ThirdPage = () => {
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      <img src={Zimo2} alt="Zimo Team Background" className="absolute inset-0 w-full h-full object-cover z-0" />
+    <div 
+    id="sixth-page"
+        div className="relative w-full h-screen flex items-center justify-center bg-black overflow-hidden">
+          <img src={Zimo2} alt="background" className="absolute top-87 sm:top-90 md:top-80 lg:top-70 left-50 sm:left-40 md:left-80 lg:left-160 transform -translate-x-1/2 -translate-y-1/2 w-100 sm:w-100 md:w-100 lg:w-350 h-auto"/>
       
       {/* ZimoSide with animation */}
       <img 
         src={ZimoSide} 
         alt="Zima Trend" 
-        className="absolute left-8 md:left-10 top-1/2 transform -translate-y-1/2 w-70 md:w-60 lg:w-100 h-auto z-10 transition-all duration-1000 ease-out"
+        className="absolute left-8 md:left-10 top-104 sm:top-90 md:top-80 lg:top-85 transform -translate-y-1/2 w-80 md:w-60 lg:w-100 h-auto z-30 transition-all duration-1000 ease-out"
         style={{ 
           animation: 'slideInFromLeft 1s ease-out forwards',
           opacity: 0,
@@ -116,7 +118,7 @@ const ThirdPage = () => {
       <img 
         src={FootSide} 
         alt="Zima Trend Footer" 
-        className="absolute bottom-25 md:bottom-20 lg:bottom-24 left-72 lg:left-200 transform -translate-x-1/2 w-60 md:w-60 lg:w-80 h-auto z-10 transition-all duration-1000 ease-out"
+        className="absolute bottom-25 md:bottom-20 lg:bottom-24 left-79 lg:left-200 transform -translate-x-1/2 w-70 md:w-60 lg:w-80 h-auto z-10 transition-all duration-1000 ease-out"
         style={{ 
           animation: 'slideInFromBottom 1s ease-out forwards',
           opacity: 0,
@@ -125,19 +127,21 @@ const ThirdPage = () => {
         }}
       />
       
-      <div className="relative z-20 flex flex-col items-center justify-center min-h-screen">
-        <img 
-          src={ZimoBigg} 
-          alt="Zimo Team" 
-          className="absolute top-12 md-top-14 transform -translate-y-1/2 w-40 md:w-60 lg:w-70"
-          style={{ 
-          animation: 'slideInFromLeft 1s ease-out forwards',
+
+   
+      <img 
+        src={ZimoBigg} 
+        alt="Zimo Team" 
+        className="absolute top-12 md:top-14 lg:top-14-24 left-72 lg:left-200 transform -translate-x-1/2 w-50 md:w-60 lg:w-70 h-auto z-10 transition-all duration-1000 ease-out"
+        style={{ 
+          animation: 'slideInFromBottom 1s ease-out forwards',
           opacity: 0,
-          transform: 'translateX(-50px) translateY(-50%)',
-          animationDelay: '0.2s'
+          transform: 'translateX(-50%) translateY(50px)',
+          animationDelay: '0.4s'
         }}
-        />
-      </div>
+      />
+    
+     
       
       <div className="absolute right-8 md:right-10 top-1/3 transform -translate-y-1/2 z-30">
         <DesktopVideoBig />

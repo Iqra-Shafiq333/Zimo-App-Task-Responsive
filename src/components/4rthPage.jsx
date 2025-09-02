@@ -25,49 +25,51 @@ const Footer = () => {
 const FourthPage = () => {
   return (
     <div 
-    id="fourth-page"
-    className="relative min-h-screen w-full flex items-center justify-center bg-white p-4 overflow-hidden">
-      {/* FourthPic with slide-up animation */}
+      id="fourth-page"
+      className="relative min-h-screen w-full flex items-center justify-center bg-white p-4 overflow-hidden"
+    >
+      {/* FourthPic with upward animation */}
       <div 
-        className="absolute top-90 sm:top-70 md:top-40 lg:top-30 left-80 lg:left-215 transform -translate-x-1/2 -translate-y-1/2 z-10 w-4/5 max-w-xs sm:max-w-sm md:max-w-md"
-        style={{
-          animation: 'slideUpFromTop 1s ease-out forwards',
-          opacity: 0
-        }}
+        className="absolute top-90 sm:top-70 md:top-40 lg:top-30 left-45 lg:left-170 transform -translate-x-1/2 z-10 w-4/5 max-w-xs sm:max-w-sm md:max-w-md animate-slideUp"
       >
-        <img src={FourthPic} alt='Picture' className="w-95 h-auto object-contain" />
+        <img src={FourthPic} alt='Picture' className="w-90 h-auto object-contain" />
       </div>
       
-      {/* AI image with slide-up animation */}
+      {/* AI image with upward animation & delay */}
       <div 
-        className="absolute bottom-26 left-80 sm:left-60 md:left-40 lg:left-215 transform -translate-x-1/2 z-20 w-3/4 max-w-xs sm:max-w-sm md:max-w-md"
-        style={{
-          animation: 'slideUpFromTop 1s ease-out forwards',
-          opacity: 0,
-          animationDelay: '0.3s'
-        }}
+        className="absolute bottom-26 left-50 sm:left-60 md:left-40 lg:left-170 transform -translate-x-1/2 z-20 w-3/4 max-w-xs sm:max-w-sm md:max-w-md animate-slideUpDelay"
       >
         <img src={AI} alt='AI' className="w-100 h-auto object-contain" />
       </div>
       
+      {/* Right-side pic stays fixed */}
       <div className="absolute bottom-8 right-4 sm:right-6 md:right-8 z-30 w-1/4 max-w-[80px] sm:max-w-[100px] md:max-w-[120px] ">
         <img src={FourthTwo} alt='pic' className="w-full h-auto object-contain" />
       </div>
       
-      {/* Animation keyframes */}
+      {/* Animations */}
       <style>
         {`
-          @keyframes slideUpFromTop {
+          @keyframes slideUp {
             0% {
               opacity: 0;
-              transform: translate(-50%, 30px);
+              transform: translateY(50px);
             }
             100% {
               opacity: 1;
-              transform: translate(-50%, -50%);
+              transform: translateY(0);
             }
           }
-          
+
+          .animate-slideUp {
+            animation: slideUp 3s ease-out forwards;
+          }
+
+          .animate-slideUpDelay {
+            animation: slideUp 1s ease-out forwards;
+            animation-delay: 0.6s;
+          }
+
           /* For the AI image which uses bottom-26 class */
           .bottom-26 {
             bottom: 6.5rem;

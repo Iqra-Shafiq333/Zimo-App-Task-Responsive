@@ -1,7 +1,7 @@
 import React from 'react'
 import Twelev1 from '../assets/12-1.svg'
 import Twelev2 from '../assets/Equal Opportunity.svg'
-import Twelev3 from '../assets/12-3.svg'
+// import Twelev3 from '../assets/12-3.svg' // ab ye use nahi hoga
 import Twelev4 from '../assets/JOIN OUR TEAM.svg'
 
 const Footer = () => {
@@ -30,23 +30,29 @@ const TwelvethPage = () => {
       id="twelveth-page"
       className="w-full h-screen bg-black flex items-center justify-center relative"
     >
-      <div className="absolute top-10 left-1/2 transform -translate-x-1/2  p-2">
+      {/* Top logo */}
+      <div className="absolute top-10 left-1/2 transform -translate-x-1/2 p-2">
         <img src={Twelev1} alt="background" className="w-70 sm:w-60 md:w-74 lg:w-80 object-contain"/>
       </div>
-      <div className="absolute top-30 left-1/2 transform -translate-x-1/2  p-2">
+
+      {/* Equal Opportunity heading */}
+      <div className="absolute top-30 left-1/2 transform -translate-x-1/2 p-2">
         <img src={Twelev2} alt="background" className="w-40 sm:w-60 md:w-74 lg:w-60 object-contain"/>
       </div>
-     <div className="absolute top-80 sm:top-50 md:top-40 lg:top-55 w-90  lg:w-140 left-27 lg:left-130 transform -translate-x-25 ">
-  <img 
-    src={Twelev3} 
-    alt="background" 
-    className="w-180 sm:w-180 md:w-144 lg:w-150 h-full " 
-  />
-</div>
 
-      <div className="absolute top-160 sm-top-130 md:top-110 lg:top-110 left-1/2 transform -translate-x-1/2  p-2">
+      {/* Replaced Twelev3 image with text */}
+      <div className="myfont absolute top-70 sm:top-50 md:top-40 lg:top-55 w-[100%] lg:w-[70%] left-1/2 transform -translate-x-1/2 text-center px-4">
+        <p className="text-[#d3d3d3] text-xs sm:text-sm md:text-base leading-relaxed tracking-wide">
+          ZIMO IS PROUD TO BE AN EQUAL OPPORTUNITY WORKPLACE AND AFFIRMATIVE ACTION EMPLOYER.WE ARE COMMITTED TO EQUAL EMPLOYMENT OPPORTUNITY REGARDLESS OF RACE, COLOUR, ANCESTRY, RELIGION, SEX,
+          SEXUAL ORIENTATION, AGE, CITIZENSHIP, MARITAL STATUS, DISABILITY, GENDER IDENTITY OR VETERAN STATUS.WE ALSO CONSIDER QUALIFIED APPLICANTS REGARDLESS OF CRIMINAL HISTORIES, CONSISTENT WITH LEGAL REQUIREMENTS.
+        </p>
+      </div>
+
+      {/* Bottom JOIN OUR TEAM image */}
+      <div className="myfont absolute top-155 sm:top-130 md:top-110 lg:top-110 left-1/2 transform -translate-x-1/2 p-2">
         <img src={Twelev4} alt="background" className="w-200 sm:w-180 md:w-144 lg:w-50 object-contain"/>
       </div>
+
       <Footer/>
     </div>
   )
